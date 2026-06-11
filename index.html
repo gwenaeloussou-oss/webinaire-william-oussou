@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lance ta chaîne YouTube No Face et génère tes premiers revenus depuis l'Afrique. Webinaire les 4 & 5 Juillet 2026 avec William Oussou.">
+<title>Webinaire YouTube No Face — 4 & 5 Juillet | William Oussou</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0A0E0C;
+    --card:      #141A17;
+    --border:    #262F2A;
+    --accent:    #FF3B3B;
+    --accent-dim:#8B1A1A;
+    --white:     #ECF1EE;
+    --grey:      #8A938E;
+    --red:       #FF5C5C;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.65;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { display: block; max-width: 100%; }
+
+  /* ── COUNTDOWN ─────────────────────────────────── */
+  .countdown-bar {
+    background: #060807;
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+  .countdown .unit { text-align: center; }
+  .countdown .num {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.3rem;
+    color: var(--accent);
+    display: block;
+    line-height: 1.2;
+  }
+  .countdown .lbl {
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--grey);
+  }
+
+  /* ── HERO ──────────────────────────────────────── */
+  .hero {
+    text-align: center;
+    padding: 48px 0 36px;
+  }
+  .hero .date-line {
+    color: var(--grey);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 6vw, 3.2rem);
+    margin-bottom: 16px;
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero p.sub {
+    color: var(--grey);
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 auto 28px;
+  }
+
+  /* ── VIDEO ─────────────────────────────────────── */
+  .video-wrap {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .video-wrap > div { width: 100%; position: relative; padding-top: 56.25%; }
+
+  /* ── PRICE TAG ─────────────────────────────────── */
+  .price-tag {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .price-tag .old { text-decoration: line-through; color: var(--grey); font-size: 1rem; }
+  .price-tag .new { font-family: 'Archivo Black', sans-serif; font-size: 1.5rem; color: var(--accent); }
+
+  /* ── CTA BUTTON ────────────────────────────────── */
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 16px 36px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    min-height: 52px;
+    touch-action: manipulation;
+    box-shadow: 0 0 0 0 rgba(255,59,59,0.4);
+    transition: box-shadow 0.2s, transform 0.1s;
+  }
+  .cta-btn:hover  { box-shadow: 0 0 28px rgba(255,59,59,0.35); }
+  .cta-btn:active { transform: scale(0.97); }
+
+  .cta-note {
+    margin-top: 12px;
+    font-size: 0.76rem;
+    color: var(--grey);
+    letter-spacing: 0.04em;
+  }
+
+  .places-bar {
+    margin-top: 16px;
+    display: inline-block;
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  /* ── STICKY MOBILE CTA ─────────────────────────── */
+  .sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 500;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 12px 16px;
+    text-align: center;
+  }
+  .sticky-cta .cta-btn { width: 100%; max-width: 400px; padding: 16px; }
+
+  /* ── SECTIONS ──────────────────────────────────── */
+  section { padding: 52px 0; }
+  .section-label {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  section h2 {
+    text-align: center;
+    font-size: clamp(1.4rem, 4.5vw, 2.1rem);
+    margin-bottom: 32px;
+  }
+  section h2 .accent { color: var(--accent); }
+
+  /* ── PROBLEM CARDS ─────────────────────────────── */
+  .intro-h2 {
+    font-size: clamp(1.3rem, 4.5vw, 2rem);
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  .problems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .problem-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .problem-card .icon {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: rgba(255,59,59,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  .problem-card h3 { font-size: 0.95rem; margin-bottom: 8px; text-transform: none; font-family: 'Inter', sans-serif; font-weight: 800; }
+  .problem-card p  { font-size: 0.85rem; color: var(--grey); }
+
+  /* ── STORY BOX ─────────────────────────────────── */
+  .story-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 36px clamp(18px, 5vw, 48px);
+  }
+  .story-box .section-label { color: var(--grey); }
+  .story-box h2 { color: var(--white); }
+  .story-box p {
+    color: var(--grey);
+    font-size: 0.97rem;
+    margin-bottom: 16px;
+    text-align: center;
+    max-width: 620px;
+    margin-left: auto; margin-right: auto;
+  }
+  .story-box .highlight { color: var(--accent); font-weight: 700; }
+  .story-box blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--white);
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  /* ── PROMISE BOX ───────────────────────────────── */
+  .promise-box {
+    background: var(--card);
+    border: 1px solid var(--accent-dim);
+    border-radius: 18px;
+    padding: 36px clamp(18px, 5vw, 48px);
+    text-align: center;
+  }
+  .promise-box h2 { margin-bottom: 16px; }
+  .promise-box p  { color: var(--grey); max-width: 560px; margin: 0 auto 12px; }
+  .promise-callout {
+    margin-top: 20px;
+    background: rgba(255,59,59,0.08);
+    border: 1px solid var(--accent-dim);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ── STOP LIST ─────────────────────────────────── */
+  .stop-list { margin-bottom: 28px; }
+  .stop-list .label {
+    color: var(--red);
+    font-weight: 800;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+  .stop-list ul { list-style: none; }
+  .stop-list li {
+    padding: 8px 0 8px 26px;
+    position: relative;
+    color: var(--grey);
+    font-size: 0.93rem;
+  }
+  .stop-list li::before { content: '✗'; position: absolute; left: 0; color: var(--red); font-weight: 800; }
+
+  .quote-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--white);
+    line-height: 1.7;
+  }
+  .quote-card .highlight { color: var(--accent); font-weight: 700; font-style: normal; }
+
+  /* ── PROGRAM DAYS ──────────────────────────────── */
+  .program {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .day-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .day-card .day-num { font-family: 'Archivo Black', sans-serif; font-size: 0.75rem; color: var(--accent); letter-spacing: 0.15em; margin-bottom: 8px; }
+  .day-card h3 { font-size: 1.05rem; margin-bottom: 12px; text-transform: none; font-family: 'Archivo Black', sans-serif; }
+  .day-card ul { list-style: none; }
+  .day-card li {
+    padding: 6px 0 6px 20px;
+    font-size: 0.9rem;
+    color: var(--grey);
+    position: relative;
+  }
+  .day-card li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+
+  /* ── INSTRUCTOR ────────────────────────────────── */
+  .instructor {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .instructor img {
+    width: 140px; height: 180px;
+    border-radius: 14px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+  .instructor-content { flex: 1; min-width: 220px; }
+  .instructor .section-label { text-align: left; margin-bottom: 4px; }
+  .instructor h2 { text-align: left; margin-bottom: 4px; font-size: 1.5rem; }
+  .instructor .role { color: var(--accent); font-size: 0.83rem; font-weight: 700; margin-bottom: 12px; text-transform: none; }
+  .instructor p { color: var(--grey); font-size: 0.9rem; margin-bottom: 16px; }
+  .instructor .stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .instructor .stat .num { font-family: 'Archivo Black', sans-serif; font-size: 1.35rem; color: var(--accent); }
+  .instructor .stat .lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--grey); }
+
+  /* ── PROOF GRID ────────────────────────────────── */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .proof-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    cursor: zoom-in;
+    transition: opacity 0.15s;
+  }
+  .proof-grid img:hover { opacity: 0.85; }
+
+  /* ── LIGHTBOX ───────────────────────────────────── */
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.93);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    cursor: zoom-out;
+  }
+  .lightbox.active { display: flex; }
+  .lightbox img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 0 60px rgba(0,0,0,0.8);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: #fff;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    touch-action: manipulation;
+    line-height: 1;
+  }
+
+  /* ── OFFER BOX ─────────────────────────────────── */
+  .offer-box {
+    background: var(--card);
+    border: 1px solid var(--accent-dim);
+    border-radius: 18px;
+    padding: 40px clamp(18px, 5vw, 48px);
+    text-align: center;
+    position: relative;
+  }
+  .offer-box .badge {
+    position: absolute;
+    top: -14px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.68rem;
+    padding: 6px 16px;
+    border-radius: 999px;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+  .offer-box .old-price { text-decoration: line-through; color: var(--grey); font-size: 1.05rem; margin-top: 16px; }
+  .offer-box .new-price { font-family: 'Archivo Black', sans-serif; font-size: 2.8rem; color: var(--accent); margin: 6px 0 4px; }
+  .offer-box .new-price span { font-size: 1.05rem; }
+  .offer-box .includes { text-align: left; margin: 20px auto; list-style: none; max-width: 380px; }
+  .offer-box .includes li { padding: 8px 0 8px 26px; position: relative; font-size: 0.9rem; color: var(--white); }
+  .offer-box .includes li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+
+  /* ── SCARCITY ──────────────────────────────────── */
+  .scarcity-widget {
+    background: rgba(255,92,92,0.06);
+    border: 1px solid var(--red);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 22px auto 0;
+    max-width: 420px;
+    text-align: left;
+  }
+  .scarcity-top { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.78rem; font-weight: 700; }
+  .scarcity-top .live-count { color: var(--red); font-family: 'Archivo Black', sans-serif; font-size: 0.95rem; }
+  .scarcity-track { width: 100%; height: 10px; background: #1c1c1c; border-radius: 999px; overflow: hidden; }
+  .scarcity-fill { height: 100%; background: var(--red); border-radius: 999px; width: 76%; transition: width 1s ease; }
+  .scarcity-foot { margin-top: 8px; font-size: 0.73rem; color: var(--grey); text-align: center; }
+
+  /* ── FINAL CTA ─────────────────────────────────── */
+  .final-cta { text-align: center; }
+  .final-cta h2 .accent { color: var(--accent); }
+  .final-cta p.sub { max-width: 520px; margin: 0 auto 28px; color: var(--grey); font-size: 0.95rem; }
+  .final-cta .footer-note {
+    margin-top: 16px;
+    font-size: 0.78rem;
+    color: var(--grey);
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  }
+  .final-cta .footer-note span { color: var(--accent); }
+
+  /* ── MODAL ─────────────────────────────────────── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(6,8,7,0.88);
+    z-index: 1000;
+    align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: var(--card);
+    border: 1px solid var(--accent-dim);
+    border-radius: 16px;
+    padding: 28px 20px;
+    max-width: 420px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .modal-close {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: var(--border);
+    color: var(--white);
+    border: none;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    line-height: 1;
+    touch-action: manipulation;
+  }
+  .modal-box h3 { font-size: 1rem; margin-bottom: 6px; text-transform: none; font-family: 'Archivo Black', sans-serif; padding-right: 40px; }
+  .modal-box .modal-price { color: var(--accent); font-family: 'Archivo Black', sans-serif; font-size: 1.4rem; margin-bottom: 16px; }
+  .modal-box .modal-price span { font-size: 0.85rem; text-decoration: line-through; color: var(--grey); font-family: 'Inter', sans-serif; }
+
+  /* ── FOOTER ────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    color: var(--grey);
+    text-align: center;
+    padding: 28px 20px 80px;
+    font-size: 0.72rem;
+    line-height: 1.9;
+  }
+
+  /* ══════════════════════════════════════════════════
+     MOBILE OPTIMIZATIONS  (≤ 600px)
+  ══════════════════════════════════════════════════ */
+  @media (max-width: 600px) {
+
+    /* Countdown */
+    .countdown { gap: 14px; }
+    .countdown .num { font-size: 1.1rem; }
+
+    /* Hero */
+    .hero { padding: 32px 0 24px; }
+    .hero h1 { font-size: clamp(1.5rem, 7.5vw, 2rem); }
+    .hero p.sub { font-size: 0.93rem; }
+
+    /* CTA full-width on mobile */
+    .cta-btn { width: 100%; max-width: 100%; padding: 16px 20px; font-size: 0.95rem; }
+
+    /* Sticky CTA */
+    .sticky-cta { display: block; }
+    footer { padding-bottom: 80px; }
+
+    /* Sections */
+    section { padding: 36px 0; }
+
+    /* Problem cards: 1 col */
+    .problems { grid-template-columns: 1fr; }
+
+    /* Program cards: 1 col */
+    .program { grid-template-columns: 1fr; }
+
+    /* Proof grid: 1 col on very small */
+    .proof-grid { grid-template-columns: 1fr; }
+
+    /* Instructor */
+    .instructor { flex-direction: column; align-items: center; text-align: center; }
+    .instructor img { width: 120px; height: 155px; }
+    .instructor-content { text-align: center; min-width: unset; width: 100%; }
+    .instructor .section-label,
+    .instructor h2 { text-align: center; }
+    .instructor .stats { justify-content: center; }
+
+    /* Offer box */
+    .offer-box .new-price { font-size: 2.2rem; }
+    .offer-box .badge { font-size: 0.62rem; white-space: nowrap; }
+
+    /* Scarcity */
+    .scarcity-widget { max-width: 100%; }
+
+    /* Final CTA */
+    .final-cta p.sub { font-size: 0.9rem; }
+
+    /* Story & promise boxes */
+    .story-box, .promise-box { padding: 24px 16px; }
+
+    /* Quote card */
+    .quote-card { padding: 18px; }
+  }
+
+  /* ── Very small (≤ 380px) ── */
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 1.4rem; }
+    .countdown .num { font-size: 1rem; }
+    .countdown { gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COUNTDOWN TOP -->
+<div class="countdown-bar">
+  <div class="countdown" id="countdown">
+    <div class="unit"><span class="num" id="cd-days">23</span><span class="lbl">Jours</span></div>
+    <div class="unit"><span class="num" id="cd-hours">00</span><span class="lbl">Heures</span></div>
+    <div class="unit"><span class="num" id="cd-mins">00</span><span class="lbl">Minutes</span></div>
+    <div class="unit"><span class="num" id="cd-secs">00</span><span class="lbl">Secondes</span></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="date-line">4 &amp; 5 Juillet 2026 · 19h00 GMT</div>
+    <h1>Lance ta chaîne <span class="accent">YouTube No Face</span><br>et génère tes premiers revenus<br>depuis l'Afrique</h1>
+    <p class="sub">Sans montrer ton visage. Sans expertise. Avec ton téléphone. Une méthode 100% pensée pour l'Afrique francophone.</p>
+
+    <div class="video-wrap">
+      <div id="vidalytics_embed_t8O4Rd7GSdpbE7Bu"></div>
+    </div>
+
+    <div class="price-tag">
+      <span class="old">10.000 FCFA</span>
+      <span class="new">2.000 FCFA / place</span>
+    </div>
+
+    <button class="cta-btn" onclick="openModal()">Je réserve ma place →</button>
+    <p class="cta-note">Webinaire payant — Places strictement limitées</p>
+    <div class="places-bar">⚠️ Il reste moins de 30 places sur 100</div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section>
+  <div class="container">
+    <h2 class="intro-h2">Ce webinaire est fait pour toi si…</h2>
+    <div class="problems">
+      <div class="problem-card">
+        <div class="icon">📉</div>
+        <h3>Tu travailles dur, mais ton compte ne suit pas</h3>
+        <p>Tu te lèves tôt, tu fais des efforts chaque jour, mais à la fin du mois, ton compte bancaire raconte toujours la même histoire frustrante.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">😩</div>
+        <h3>Tu as déjà essayé… sans résultat</h3>
+        <p>Dropshipping, trading, formations sur les réseaux. Soit ça n'a pas marché, soit tu t'es retrouvé face à des "coachs" qui t'ont arnaqué.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">📵</div>
+        <h3>Tu ne veux pas montrer ton visage</h3>
+        <p>Tu n'es pas influenceur et tu n'as pas envie de t'exposer. Tu veux une méthode discrète, qui marche depuis ton téléphone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section>
+  <div class="container">
+    <div class="story-box">
+      <div class="section-label">Ta réalité aujourd'hui</div>
+      <h2>Est-ce que ça te parle ?</h2>
+      <p>Tu connais forcément quelqu'un qui poste "juste" quelques vidéos sur YouTube et qui <span class="highlight">gagne déjà plus que toi</span>. Sans montrer son visage. Sans expertise particulière.</p>
+      <p>Toi, tu passes tes journées à chercher une solution, parfois à dépenser de l'argent dans des formations qui <span class="highlight">ne tiennent jamais leurs promesses</span>. Tu as essayé une fois, deux fois. Même résultat : 0 FCFA.</p>
+      <blockquote>Alors tu as fini par te dire : "ce n'est pas fait pour moi". Et tu as accepté de rester dans l'ombre, pendant que d'autres construisent une vraie source de revenus depuis l'Afrique.</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- UNIQUE ANGLE -->
+<section>
+  <div class="container">
+    <div class="promise-box">
+      <div class="section-label">Le vrai problème</div>
+      <h2>Ce qui te sépare d'eux, ce n'est pas ce que tu crois</h2>
+      <p>Tu penses peut-être qu'ils ont eu de la chance, un réseau secret, ou des heures à passer derrière un écran.</p>
+      <p><strong style="color:var(--white)">La vérité ? Ce n'est ni leur niveau d'expertise, ni un algorithme magique.</strong></p>
+      <div class="promise-callout">Ce qui les sépare, c'est qu'ils ont une méthode claire, testée, adaptée à l'Afrique. Et à la fin de ce webinaire, je ne te vendrai aucune offre à 100.000 FCFA — juste de la valeur, pour que tu décides toi-même de ta prochaine étape.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STOP DOING / QUOTE -->
+<section>
+  <div class="container">
+    <h2 style="text-align:center; margin-bottom:8px;">La nouvelle façon de faire</h2>
+    <p style="text-align:center; color:var(--grey); margin-bottom:28px; font-size:0.95rem;">Oublie tout ce qu'on t'a dit sur YouTube. Voici ce que tu vas apprendre.</p>
+    <div class="stop-list">
+      <div class="label">Ce que tu dois arrêter de faire :</div>
+      <ul>
+        <li>Attendre d'avoir "le bon matériel" pour commencer</li>
+        <li>Croire qu'il faut montrer son visage pour réussir sur YouTube</li>
+        <li>Acheter des formations génériques qui ne parlent pas de ta réalité africaine</li>
+      </ul>
+    </div>
+    <div class="quote-card">"La méthode que je vais te montrer est un système simple et concret qui te permet de lancer une chaîne YouTube No Face rentable depuis ton téléphone — <span class="highlight">sans capital, sans expertise, et sans jamais te montrer.</span>"</div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section>
+  <div class="container">
+    <div class="section-label">Au programme</div>
+    <h2>Ce soir-là, tu vas découvrir…</h2>
+    <div class="program">
+      <div class="day-card">
+        <div class="day-num">JOUR 1 — 4 JUILLET</div>
+        <h3>Le système complet</h3>
+        <ul>
+          <li>Comment choisir ta niche rentable</li>
+          <li>Créer du contenu sans montrer ton visage</li>
+          <li>Configurer ta chaîne pour la monétisation</li>
+          <li>Les bases de la stratégie YouTube No Face</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-num">JOUR 2 — 5 JUILLET</div>
+        <h3>Accélération &amp; passage à l'action</h3>
+        <ul>
+          <li>Comment dupliquer tes revenus</li>
+          <li>Les 3 façons de monétiser une chaîne No Face</li>
+          <li>Études de cas de membres de la communauté</li>
+          <li>Session questions/réponses en direct</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTOR -->
+<section>
+  <div class="container">
+    <div class="instructor">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69ebc2ef8dcfd1.22622888_11.png" alt="William Oussou" loading="lazy">
+      <div class="instructor-content">
+        <div class="section-label">Ton formateur dans cette aventure</div>
+        <h2>William Oussou</h2>
+        <div class="role">YouTube No Face Strategist &amp; Formateur</div>
+        <p>Entrepreneur, investisseur et formateur, spécialisé dans le YouTube No Face, le freelancing et le trading. Sa mission : prouver qu'en Afrique aussi, on peut créer et vivre du digital — sans arnaque, sans illusion, avec de vraies stratégies testées.</p>
+        <div class="stats">
+          <div class="stat"><div class="num">+100</div><div class="lbl">Personnes accompagnées</div></div>
+          <div class="stat"><div class="num">10M+</div><div class="lbl">FCFA générés en 2025</div></div>
+          <div class="stat"><div class="num">99%</div><div class="lbl">de marge — sans coût de départ</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section>
+  <div class="container">
+    <div class="section-label">Ils l'ont fait</div>
+    <h2>Les résultats parlent d'eux-mêmes</h2>
+    <div class="proof-grid">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111ef775738_GmcYR3VW4AARrSb.jpeg" alt="Résultat 1" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111f09e24f7_GmM--jEXcAAA1ZH.jpeg" alt="Résultat 2" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/289469/68b6976d26dba_photo_2025-09-02_09-03-15.jpg" alt="Résultat 3" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111d871cdbc_photo_2025-11-09_23-02-18.jpg" alt="Résultat 4" loading="lazy" onclick="openLightbox(this)">
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section>
+  <div class="container">
+    <div class="section-label">Offre exclusive</div>
+    <h2>Réserve ta place maintenant</h2>
+    <div class="offer-box">
+      <div class="badge">−80% AUJOURD'HUI</div>
+      <p style="color:var(--grey);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:800;">Accès complet · 2 jours de formation live</p>
+      <div class="old-price">10.000 FCFA</div>
+      <div class="new-price">2.000 <span>FCFA</span></div>
+      <ul class="includes">
+        <li>Accès en direct au webinaire — Jour 1 &amp; 2 (4 et 5 juillet)</li>
+        <li>Méthode complète YouTube No Face</li>
+        <li>Études de cas réelles de membres africains</li>
+        <li>Session Q&amp;R en direct avec William</li>
+        <li>Accès au groupe privé de la communauté</li>
+        <li>Aucune offre forcée à la fin — juste de la valeur</li>
+      </ul>
+      <button class="cta-btn" onclick="openModal()">Je réserve ma place →</button>
+    </div>
+    <div class="scarcity-widget">
+      <div class="scarcity-top">
+        <span>Places réservées</span>
+        <span class="live-count" id="places-count">76 / 100</span>
+      </div>
+      <div class="scarcity-track"><div class="scarcity-fill" id="scarcity-fill"></div></div>
+      <div class="scarcity-foot" id="scarcity-foot">Il reste moins de 30 places — chaque minute compte</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Réserve ta place — <span class="accent">2.000 FCFA seulement</span></h2>
+    <p class="sub">Premier choix : tu fermes cette page, tu continues ta routine, et le 4 juillet tu n'es pas dans le live. Deuxième choix : tu sécurises ta place pour 2.000 FCFA et tu repars avec une méthode complète pour démarrer depuis l'Afrique.</p>
+    <button class="cta-btn" onclick="openModal()">Je réserve ma place →</button>
+    <div class="footer-note">
+      <span>✓</span> 2 jours de live &nbsp;<span>✓</span> Accès groupe privé &nbsp;<span>✓</span> Aucune offre forcée
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="payment-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3>Réserve ta place — Webinaire 4 &amp; 5 Juillet</h3>
+    <div class="modal-price">2.000 FCFA <span>au lieu de 10.000 FCFA</span></div>
+    <div id="chariow-widget"
+      data-product-id="prd_t93nix"
+      data-store-domain="william-oussou.mychariow.shop"
+      data-style="frame"
+      data-border-style="rounded"
+      data-cta-width="xs"
+      data-cta-animation="none"
+      data-locale="en"
+      data-primary-color="#ffcc00"
+      data-background-color="#FFFFFF"></div>
+    <p class="cta-note" style="margin-top:12px;">⚠️ Il reste moins de 30 places sur 100</p>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <button class="cta-btn" onclick="openModal()">Je réserve — 2.000 FCFA →</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 William Oussou — Tous droits réservés.<br>
+  Mentions légales · Politique de confidentialité · CGV<br>
+  Ce site n'est pas affilié à YouTube™, Google™ ou Facebook™.
+</footer>
+
+<!-- VIDALYTICS -->
+<script>
+(function(v,i,d,a,l,y,t,c,s){
+  y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}
+  var vl='Loader',vli=v[y][vl],vsl=v[c][vl+'Script'],vlf=v[c][vl+'Loaded'],ve='Embed';
+  if(!vsl){vsl=function(u,cb){if(t){cb();return;}s=i.createElement('script');s.type='text/javascript';s.async=1;s.src=u;
+    if(s.readyState){s.onreadystatechange=function(){if(s.readyState==='loaded'||s.readyState=='complete'){s.onreadystatechange=null;vlf=1;cb();}};}
+    else{s.onload=function(){vlf=1;cb();};}i.getElementsByTagName('head')[0].appendChild(s);};}
+  vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+})(window,document,'Vidalytics','vidalytics_embed_t8O4Rd7GSdpbE7Bu','https://fast.vidalytics.com/embeds/Y8bCGysy/t8O4Rd7GSdpbE7Bu/');
+</script>
+
+<!-- CHARIOW -->
+<script>
+(function(){
+  var s=document.createElement('script');
+  s.src='https://js.chariowcdn.com/v1/widget.min.js';
+  s.async=true;
+  document.head.appendChild(s);
+  var l=document.createElement('link');
+  l.rel='stylesheet';
+  l.href='https://js.chariowcdn.com/v1/widget.min.css';
+  document.head.appendChild(l);
+})();
+</script>
+
+<!-- MODAL -->
+<script>
+  function openModal(){
+    document.getElementById('payment-modal').classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){
+    document.getElementById('payment-modal').classList.remove('active');
+    document.body.style.overflow='';
+  }
+  document.getElementById('payment-modal').addEventListener('click',function(e){
+    if(e.target===this) closeModal();
+  });
+</script>
+
+<!-- COUNTDOWN + SCARCITY -->
+<script>
+  var target = new Date(2026,6,4,19,0,0);
+  function updateCountdown(){
+    var diff = target - new Date();
+    if(diff < 0) diff = 0;
+    var d = Math.floor(diff/86400000),
+        h = Math.floor((diff%86400000)/3600000),
+        m = Math.floor((diff%3600000)/60000),
+        s = Math.floor((diff%60000)/1000);
+    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  var taken = 76;
+  function updateScarcity(){
+    document.getElementById('scarcity-fill').style.width = taken+'%';
+    document.getElementById('places-count').textContent  = taken+' / 100';
+    var r = 100 - taken;
+    document.getElementById('scarcity-foot').textContent =
+      r <= 30 ? 'Il reste seulement '+r+' places — dépêche-toi'
+              : 'Places en cours de réservation';
+  }
+  updateScarcity();
+  setInterval(function(){
+    if(taken < 99 && Math.random() > 0.4){ taken++; updateScarcity(); }
+  }, 25000);
+
+  /* Lightbox */
+  function openLightbox(img){
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
+
+  /* Hide sticky CTA after user scrolls past final CTA */
+  var stickyCta = document.querySelector('.sticky-cta');
+  var finalCta  = document.querySelector('.final-cta');
+  window.addEventListener('scroll', function(){
+    var rect = finalCta.getBoundingClientRect();
+    stickyCta.style.display = rect.top < window.innerHeight ? 'none' : '';
+  }, {passive: true});
+</script>
+
+</body>
+</html>
