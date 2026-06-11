@@ -78,7 +78,7 @@
     margin-bottom: 22px;
   }
   .hero h1 {
-    font-size: clamp(1.6rem, 5vw, 2.8rem);
+    font-size: clamp(1.3rem, 4.7vw, 2.5rem);
     margin-bottom: 18px;
     line-height: 1.05;
   }
@@ -156,11 +156,11 @@
     flex-wrap: wrap;
     margin-bottom: 32px;
   }
-  .btn-whatsapp {
+  .btn-whatsapp, .btn-bonus {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    background: #25D366;
     color: #fff;
     font-family: 'Archivo Black', sans-serif;
     text-transform: uppercase;
@@ -172,25 +172,14 @@
     text-decoration: none;
     transition: box-shadow 0.2s, transform 0.1s;
     letter-spacing: 0.03em;
+    flex: 1 1 0;
+    min-width: 200px;
+    max-width: 280px;
   }
+  .btn-whatsapp { background: #25D366; }
   .btn-whatsapp:hover  { box-shadow: 0 0 24px rgba(37,211,102,0.4); }
   .btn-whatsapp:active { transform: scale(0.97); }
-  .btn-bonus {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent);
-    color: #fff;
-    font-family: 'Archivo Black', sans-serif;
-    text-transform: uppercase;
-    font-size: 0.88rem;
-    padding: 15px 28px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: box-shadow 0.2s, transform 0.1s;
-    letter-spacing: 0.03em;
-  }
+  .btn-bonus { background: var(--accent); }
   .btn-bonus:hover  { box-shadow: 0 0 24px rgba(255,59,59,0.4); }
   .btn-bonus:active { transform: scale(0.97); }
 
@@ -610,7 +599,7 @@
   ══════════════════════════════════════════════ */
   @media (max-width: 600px) {
     .hero { padding: 36px 0 28px; }
-    .hero h1 { font-size: clamp(1.4rem, 7vw, 1.8rem); }
+    .hero h1 { font-size: clamp(1.1rem, 6.7vw, 1.5rem); }
     .price-block .new { font-size: 2.4rem; }
     .cta-btn { width: 100%; padding: 16px 20px; font-size: 0.95rem; }
     section { padding: 40px 0; }
@@ -630,7 +619,7 @@
   }
 
   @media (max-width: 380px) {
-    .hero h1 { font-size: 1.25rem; }
+    .hero h1 { font-size: 0.95rem; }
     .price-block .new { font-size: 2rem; }
   }
 </style>
@@ -639,7 +628,7 @@
 
 <!-- URGENCY BAR -->
 <div class="urgency-bar">
-  OFFRE EXCLUSIVE WEBINAIRE — <span>Expire dans 48h après la fin du live</span>
+  OFFRE EXCLUSIVE WEBINAIRE — <span>Expire dans 24h après inscription</span>
 </div>
 
 <!-- HERO -->
@@ -805,10 +794,13 @@
     </div>
 
     <div class="proof-grid">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111ef775738_GmcYR3VW4AARrSb.jpeg" alt="Résultat membre 1" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111f09e24f7_GmM--jEXcAAA1ZH.jpeg" alt="Résultat membre 2" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/289469/68b6976d26dba_photo_2025-09-02_09-03-15.jpg" alt="Résultat membre 3" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69ebc2ef8dcfd1.22622888_11.png" alt="Résultat membre 4" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69112140ec56b_GnrBMxaXEAAMCt2.png" alt="Résultat membre 1" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691120495fb14_G40v6QgW4AArpxs1.png" alt="Résultat membre 2" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691121293f964_Gopfdw1WMAAUtwU.png" alt="Résultat membre 3" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111cbac7bde_G4lAR-fXoAAX88v.jpeg" alt="Résultat membre 4" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69250176db932_GmcYR3VW4AARrSb.jpeg" alt="Résultat membre 5" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6925018998429_GmVt0EwXAAAaYAQ.jpeg" alt="Résultat membre 6" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111d871cdbc_photo_2025-11-09_23-02-18.jpg" alt="Résultat membre 7" loading="lazy" onclick="openLightbox(this)">
     </div>
   </div>
 </section>
@@ -917,16 +909,8 @@
         <li>Garantie satisfait ou remboursé 14 jours</li>
       </ul>
 
-      <!-- Chariow Widget -->
-      <div id="chariow-widget" data-product-id="prd_sqq6uk"
-          data-store-domain="william-oussou.mychariow.shop"
-          data-style="frame"
-          data-border-style="rounded"
-          data-cta-width="xs"
-          data-cta-animation="none"
-          data-locale="en"
-          data-primary-color="#ffcc00"
-          data-background-color="#FFFFFF"></div>
+      <button class="cta-btn" onclick="openPaymentModal()">Accès immédiat pour 3.500 FCFA →</button>
+      <p class="cta-note">Paiement sécurisé · Mobile Money · Orange Money · Wave · MTN</p>
 
       <div class="scarcity-widget">
         <div class="scarcity-top">
