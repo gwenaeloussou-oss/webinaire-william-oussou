@@ -1,6 +1,6 @@
 {
   "rewrites": [
     { "source": "/masterclass-payante", "destination": "/index.html" },
-    { "source": "/bonus", "destination": "/bonus.html" }
+    { "source": "/bonus-offert", "destination": "/bonus.html" }
   ]
 }
