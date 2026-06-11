@@ -151,30 +151,33 @@
   /* ── VIDEO BUTTONS ───────────────────────────── */
   .video-btns {
     display: flex;
-    gap: 14px;
+    gap: 10px;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-bottom: 32px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .btn-whatsapp, .btn-bonus {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     color: #fff;
     font-family: 'Archivo Black', sans-serif;
     text-transform: uppercase;
-    font-size: 0.88rem;
-    padding: 15px 28px;
+    font-size: 0.78rem;
+    padding: 14px 16px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     text-decoration: none;
     transition: box-shadow 0.2s, transform 0.1s;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     flex: 1 1 0;
-    min-width: 200px;
-    max-width: 280px;
+    min-width: 0;
+    white-space: nowrap;
   }
   .btn-whatsapp { background: #25D366; }
   .btn-whatsapp:hover  { box-shadow: 0 0 24px rgba(37,211,102,0.4); }
