@@ -355,14 +355,14 @@
   /* ── PROOF GRID ────────────────────────────────── */
   .proof-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
   .proof-grid img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
     border: 1px solid var(--border);
     cursor: zoom-in;
     transition: opacity 0.15s;
@@ -539,8 +539,8 @@
     /* Program cards: 1 col */
     .program { grid-template-columns: 1fr; }
 
-    /* Proof grid: 1 col on very small */
-    .proof-grid { grid-template-columns: 1fr; }
+    /* Proof grid: 2 cols on mobile */
+    .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 
     /* Instructor */
     .instructor { flex-direction: column; align-items: center; text-align: center; }
@@ -732,9 +732,13 @@
     <div class="section-label">Ils l'ont fait</div>
     <h2>Les résultats parlent d'eux-mêmes</h2>
     <div class="proof-grid">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111ef775738_GmcYR3VW4AARrSb.jpeg" alt="Résultat 1" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111f09e24f7_GmM--jEXcAAA1ZH.jpeg" alt="Résultat 2" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/289469/68b6976d26dba_photo_2025-09-02_09-03-15.jpg" alt="Résultat 3" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69112140ec56b_GnrBMxaXEAAMCt2.png" alt="Résultat membre 1" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691120495fb14_G40v6QgW4AArpxs1.png" alt="Résultat membre 2" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691121293f964_Gopfdw1WMAAUtwU.png" alt="Résultat membre 3" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111cbac7bde_G4lAR-fXoAAX88v.jpeg" alt="Résultat membre 4" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69250176db932_GmcYR3VW4AARrSb.jpeg" alt="Résultat membre 5" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6925018998429_GmVt0EwXAAAaYAQ.jpeg" alt="Résultat membre 6" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111d871cdbc_photo_2025-11-09_23-02-18.jpg" alt="Résultat membre 7" loading="lazy" onclick="openLightbox(this)">
     </div>
   </div>
 </section>
