@@ -105,6 +105,16 @@
   }
   .hero .sub strong { color: var(--white); }
 
+  /* ── VIDEO ── */
+  .video-wrap {
+    max-width: 680px;
+    margin: 0 auto 36px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .video-wrap > div { width: 100%; position: relative; padding-top: 56.25%; }
+
   /* ── STAT ROW ── */
   .stat-row {
     display: flex;
@@ -675,6 +685,10 @@
     <h1>Become a <span class="accent">Profitable Trader</span><br>in Under 90 Days —<br>From Your Phone</h1>
     <p class="sub">Copy expert signals. Earn weekly returns. Build a real income stream from Africa — <strong>without showing your face, without a computer, without prior knowledge.</strong></p>
 
+    <div class="video-wrap">
+      <div id="vidalytics_embed_trading"></div>
+    </div>
+
     <div class="stat-row">
       <div class="stat-item">
         <div class="num">5–30%</div>
@@ -1194,6 +1208,18 @@
       document.getElementById('scarcity-fill').style.width = Math.min(fill + 78, 97) + '%';
     }
   }, 40000);
+</script>
+
+<!-- VIDALYTICS -->
+<script>
+(function(v,i,d,a,l,y,t,c,s){
+  y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}
+  var vl='Loader',vli=v[y][vl],vsl=v[c][vl+'Script'],vlf=v[c][vl+'Loaded'],ve='Embed';
+  if(!vsl){vsl=function(u,cb){if(t){cb();return;}s=i.createElement('script');s.type='text/javascript';s.async=1;s.src=u;
+    if(s.readyState){s.onreadystatechange=function(){if(s.readyState==='loaded'||s.readyState=='complete'){s.onreadystatechange=null;vlf=1;cb();}};}
+    else{s.onload=function(){vlf=1;cb();};}i.getElementsByTagName('head')[0].appendChild(s);};}
+  vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+})(window,document,'Vidalytics','vidalytics_embed_trading','https://fast.vidalytics.com/embeds/Y8bCGysy/TRADING_VIDEO_ID/');
 </script>
 
 <!-- CHARIOW -->
