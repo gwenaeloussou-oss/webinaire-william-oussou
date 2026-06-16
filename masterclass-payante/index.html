@@ -569,6 +569,52 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
   .testi-name { font-weight: 800; font-size: 0.88rem; color: var(--white); }
   .testi-loc { font-size: 0.72rem; color: var(--accent); font-weight: 600; margin-top: 2px; }
 
+  /* ── PHONE SCREENSHOTS ──────────────────────────── */
+  .phone-scroll-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 0 24px;
+    scrollbar-width: none;
+  }
+  .phone-scroll-wrap::-webkit-scrollbar { display: none; }
+  .phone-scroll {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    padding: 0 4px;
+  }
+  .phone-frame {
+    width: 175px;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    background: #000;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .phone-frame img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    border-radius: 0;
+    border: none;
+    cursor: zoom-in;
+    transition: opacity 0.15s;
+  }
+  .phone-frame img:hover { opacity: 0.88; }
+  .phone-notch {
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 10px;
+    background: #000;
+    border-radius: 0 0 8px 8px;
+    z-index: 2;
+  }
+
   /* ── PROOF GRID ─────────────────────────────────── */
   .proof-grid {
     display: grid;
@@ -1105,6 +1151,47 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
             <div class="testi-name">Mariama D.</div>
             <div class="testi-loc">🇧🇯 Bénin · 1.000.000 FCFA en 6 mois</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES VISUELS — CAPTURES WHATSAPP -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-label">Preuves directes — captures WhatsApp & YouTube Studio</div>
+    <h2 style="margin-bottom:8px;">Leurs propres <span class="accent">chiffres, leurs propres mots</span></h2>
+    <p style="text-align:center;color:var(--grey);font-size:0.84rem;margin-bottom:24px;">Fais défiler → messages réels du groupe privé de la communauté</p>
+    <div class="phone-scroll-wrap">
+      <div class="phone-scroll">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173a31fe904.50127693_photo_2026-06-1616.02.18.jpeg" alt="Témoignage membre 1" loading="lazy" onclick="openLightbox(this)">
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173dcab44b7.30581794_photo_2026-06-1616.02.12.jpeg" alt="Témoignage membre 2" loading="lazy" onclick="openLightbox(this)">
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173f3ba5c66.75511443_photo_2026-06-1616.02.14.jpeg" alt="Témoignage membre 3" loading="lazy" onclick="openLightbox(this)">
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a317404a23ef6.69813823_photo_2026-06-1616.02.16.jpeg" alt="Témoignage membre 4" loading="lazy" onclick="openLightbox(this)">
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a317415745ca4.52310932_photo_2026-06-1616.02.08.jpeg" alt="Témoignage membre 5" loading="lazy" onclick="openLightbox(this)">
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a31743ed4ae10.85993588_photo_2026-06-1616.02.06.jpeg" alt="Témoignage membre 6" loading="lazy" onclick="openLightbox(this)">
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3174564f0926.45481831_photo_2026-06-1616.02.10.jpeg" alt="Témoignage membre 7" loading="lazy" onclick="openLightbox(this)">
         </div>
       </div>
     </div>
