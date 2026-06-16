@@ -628,28 +628,23 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
     max-width: 380px;
     border-radius: 14px;
     border: 1px solid var(--border);
-    cursor: zoom-in;
-    transition: opacity 0.15s;
     display: block;
   }
-  .captures-stack img:hover { opacity: 0.88; }
 
   /* ── PROOF GRID ─────────────────────────────────── */
   .proof-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
   }
   .proof-grid img {
     width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 8px;
+    max-width: 480px;
+    border-radius: 12px;
     border: 1px solid var(--border);
-    cursor: zoom-in;
-    transition: opacity 0.15s;
+    display: block;
   }
-  .proof-grid img:hover { opacity: 0.85; }
 
   /* ── FOOTER ────────────────────────────────────── */
   footer {
@@ -698,8 +693,8 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
     /* Program cards: 1 col */
     .program { grid-template-columns: 1fr; }
 
-    /* Proof grid: 2 cols on mobile */
-    .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    /* Proof grid: 1 col on mobile */
+    .proof-grid { max-width: 100%; }
 
     /* Instructor */
     .instructor { flex-direction: column; align-items: center; text-align: center; }
@@ -1050,22 +1045,22 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
   <div class="container">
     <h2>Résultats des membres de la communauté <span class="accent">YouTube Ultra</span></h2>
     <div class="proof-grid">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69112140ec56b_GnrBMxaXEAAMCt2.png" alt="Résultat membre 1" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691120495fb14_G40v6QgW4AArpxs1.png" alt="Résultat membre 2" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691121293f964_Gopfdw1WMAAUtwU.png" alt="Résultat membre 3" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111cbac7bde_G4lAR-fXoAAX88v.jpeg" alt="Résultat membre 4" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69250176db932_GmcYR3VW4AARrSb.jpeg" alt="Résultat membre 5" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6925018998429_GmVt0EwXAAAaYAQ.jpeg" alt="Résultat membre 6" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111d871cdbc_photo_2025-11-09_23-02-18.jpg" alt="Résultat membre 7" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69112140ec56b_GnrBMxaXEAAMCt2.png" alt="Résultat membre 1" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691120495fb14_G40v6QgW4AArpxs1.png" alt="Résultat membre 2" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691121293f964_Gopfdw1WMAAUtwU.png" alt="Résultat membre 3" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111cbac7bde_G4lAR-fXoAAX88v.jpeg" alt="Résultat membre 4" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69250176db932_GmcYR3VW4AARrSb.jpeg" alt="Résultat membre 5" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6925018998429_GmVt0EwXAAAaYAQ.jpeg" alt="Résultat membre 6" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111d871cdbc_photo_2025-11-09_23-02-18.jpg" alt="Résultat membre 7" loading="lazy">
     </div>
     <div class="captures-stack">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173a31fe904.50127693_photo_2026-06-1616.02.18.jpeg" alt="Capture membre 1" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173dcab44b7.30581794_photo_2026-06-1616.02.12.jpeg" alt="Capture membre 2" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173f3ba5c66.75511443_photo_2026-06-1616.02.14.jpeg" alt="Capture membre 3" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a317404a23ef6.69813823_photo_2026-06-1616.02.16.jpeg" alt="Capture membre 4" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a317415745ca4.52310932_photo_2026-06-1616.02.08.jpeg" alt="Capture membre 5" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a31743ed4ae10.85993588_photo_2026-06-1616.02.06.jpeg" alt="Capture membre 6" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3174564f0926.45481831_photo_2026-06-1616.02.10.jpeg" alt="Capture membre 7" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173a31fe904.50127693_photo_2026-06-1616.02.18.jpeg" alt="Capture membre 1" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173dcab44b7.30581794_photo_2026-06-1616.02.12.jpeg" alt="Capture membre 2" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173f3ba5c66.75511443_photo_2026-06-1616.02.14.jpeg" alt="Capture membre 3" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a317404a23ef6.69813823_photo_2026-06-1616.02.16.jpeg" alt="Capture membre 4" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a317415745ca4.52310932_photo_2026-06-1616.02.08.jpeg" alt="Capture membre 5" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a31743ed4ae10.85993588_photo_2026-06-1616.02.06.jpeg" alt="Capture membre 6" loading="lazy">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3174564f0926.45481831_photo_2026-06-1616.02.10.jpeg" alt="Capture membre 7" loading="lazy">
     </div>
   </div>
 </section>
