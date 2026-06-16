@@ -368,23 +368,6 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
   .instructor .stat .num { font-family: 'Archivo Black', sans-serif; font-size: 1.35rem; color: var(--accent); }
   .instructor .stat .lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--grey); }
 
-  /* ── PROOF GRID ────────────────────────────────── */
-  .proof-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-  .proof-grid img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    cursor: zoom-in;
-    transition: opacity 0.15s;
-  }
-  .proof-grid img:hover { opacity: 0.85; }
-
   /* ── LIGHTBOX ───────────────────────────────────── */
   .lightbox {
     display: none;
@@ -515,6 +498,94 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
   .modal-box .modal-price { color: var(--accent); font-family: 'Archivo Black', sans-serif; font-size: 1.4rem; margin-bottom: 16px; }
   .modal-box .modal-price span { font-size: 0.85rem; text-decoration: line-through; color: var(--grey); font-family: 'Inter', sans-serif; }
 
+  /* ── RESULTS STRIP ─────────────────────────────── */
+  .results-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .result-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 16px;
+    text-align: center;
+  }
+  .result-num {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.7rem;
+    color: var(--accent);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .result-num span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+  .result-lbl { font-size: 0.78rem; color: var(--grey); line-height: 1.4; }
+  .results-callout {
+    background: rgba(255,59,59,0.06);
+    border: 1px solid var(--accent-dim);
+    border-radius: 12px;
+    padding: 18px 24px;
+    text-align: center;
+    color: var(--grey);
+    font-size: 0.93rem;
+    line-height: 1.7;
+  }
+  .results-callout strong { color: var(--white); }
+
+  /* ── TÉMOIGNAGES ────────────────────────────────── */
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .testi-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .testi-stars { color: #F5C842; font-size: 0.85rem; letter-spacing: 2px; }
+  .testi-card p { color: var(--grey); font-size: 0.88rem; line-height: 1.7; font-style: italic; flex: 1; }
+  .testi-author { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+  .testi-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1rem;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .testi-name { font-weight: 800; font-size: 0.88rem; color: var(--white); }
+  .testi-loc { font-size: 0.72rem; color: var(--accent); font-weight: 600; margin-top: 2px; }
+
+  /* ── PROOF GRID ─────────────────────────────────── */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .proof-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    cursor: zoom-in;
+    transition: opacity 0.15s;
+  }
+  .proof-grid img:hover { opacity: 0.85; }
+
   /* ── FOOTER ────────────────────────────────────── */
   footer {
     border-top: 1px solid var(--border);
@@ -551,6 +622,12 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
 
     /* Problem cards: 1 col */
     .problems { grid-template-columns: 1fr; }
+
+    /* Results strip: 2 cols */
+    .results-strip { grid-template-columns: repeat(2, 1fr); }
+
+    /* Testi grid: 1 col */
+    .testi-grid { grid-template-columns: 1fr; }
 
     /* Program cards: 1 col */
     .program { grid-template-columns: 1fr; }
@@ -626,74 +703,36 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- PROBLEMS -->
+<!-- RÉSULTATS CHOCS -->
 <section>
   <div class="container">
-    <h2 class="intro-h2">Ce webinaire est fait pour toi si…</h2>
-    <div class="problems">
-      <div class="problem-card">
-        <div class="icon">📉</div>
-        <h3>Tu travailles dur, mais ton compte ne suit pas</h3>
-        <p>Tu te lèves tôt, tu fais des efforts chaque jour, mais à la fin du mois, ton compte bancaire raconte toujours la même histoire frustrante.</p>
+    <div class="section-label">Ce que la méthode a produit</div>
+    <h2>Pendant que tu lisais ça,<br><span class="accent">mes élèves généraient des revenus</span></h2>
+    <div class="results-strip">
+      <div class="result-card">
+        <div class="result-num">300.000<span>FCFA</span></div>
+        <div class="result-lbl">par mois — élève depuis 4 mois</div>
       </div>
-      <div class="problem-card">
-        <div class="icon">😩</div>
-        <h3>Tu as déjà essayé… sans résultat</h3>
-        <p>Dropshipping, trading, formations sur les réseaux. Soit ça n'a pas marché, soit tu t'es retrouvé face à des "coachs" qui t'ont arnaqué.</p>
+      <div class="result-card">
+        <div class="result-num">1M+<span>FCFA</span></div>
+        <div class="result-lbl">généré en 6 mois depuis le Bénin</div>
       </div>
-      <div class="problem-card">
-        <div class="icon">📵</div>
-        <h3>Tu ne veux pas montrer ton visage</h3>
-        <p>Tu n'es pas influenceur et tu n'as pas envie de t'exposer. Tu veux une méthode discrète, qui marche depuis ton téléphone.</p>
+      <div class="result-card">
+        <div class="result-num">50k<span>abonnés</span></div>
+        <div class="result-lbl">en 90 jours sans montrer son visage</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">100%</div>
+        <div class="result-lbl">depuis un téléphone, sans capital</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- STORY -->
-<section>
-  <div class="container">
-    <div class="story-box">
-      <div class="section-label">Ta réalité aujourd'hui</div>
-      <h2>Est-ce que ça te parle ?</h2>
-      <p>Tu connais forcément quelqu'un qui poste "juste" quelques vidéos sur YouTube et qui <span class="highlight">gagne déjà plus que toi</span>. Sans montrer son visage. Sans expertise particulière.</p>
-      <p>Toi, tu passes tes journées à chercher une solution, parfois à dépenser de l'argent dans des formations qui <span class="highlight">ne tiennent jamais leurs promesses</span>. Tu as essayé une fois, deux fois. Même résultat : 0 FCFA.</p>
-      <blockquote>Alors tu as fini par te dire : "ce n'est pas fait pour moi". Et tu as accepté de rester dans l'ombre, pendant que d'autres construisent une vraie source de revenus depuis l'Afrique.</blockquote>
+    <div class="results-callout">
+      Ces résultats ne viennent pas de la chance. Ils viennent d'une méthode précise, appliquée étape par étape. <strong>Dans ce webinaire, je te montre exactement ce qu'ils ont fait.</strong>
     </div>
   </div>
 </section>
 
-<!-- UNIQUE ANGLE -->
-<section>
-  <div class="container">
-    <div class="promise-box">
-      <div class="section-label">Le vrai problème</div>
-      <h2>Ce qui te sépare d'eux, ce n'est pas ce que tu crois</h2>
-      <p>Tu penses peut-être qu'ils ont eu de la chance, un réseau secret, ou des heures à passer derrière un écran.</p>
-      <p><strong style="color:var(--white)">La vérité ? Ce n'est ni leur niveau d'expertise, ni un algorithme magique.</strong></p>
-      <div class="promise-callout">Ce qui les sépare, c'est qu'ils ont une méthode claire, testée, adaptée à l'Afrique — et à la fin de ce webinaire, tu auras exactement ce qu'il te faut pour décider de ta prochaine étape.</div>
-    </div>
-  </div>
-</section>
-
-<!-- STOP DOING / QUOTE -->
-<section>
-  <div class="container">
-    <h2 style="text-align:center; margin-bottom:8px;">La nouvelle façon de faire</h2>
-    <p style="text-align:center; color:var(--grey); margin-bottom:28px; font-size:0.95rem;">Oublie tout ce qu'on t'a dit sur YouTube. Voici ce que tu vas apprendre.</p>
-    <div class="stop-list">
-      <div class="label">Ce que tu dois arrêter de faire :</div>
-      <ul>
-        <li>Attendre d'avoir "le bon matériel" pour commencer</li>
-        <li>Croire qu'il faut montrer son visage pour réussir sur YouTube</li>
-        <li>Acheter des formations génériques qui ne parlent pas de ta réalité africaine</li>
-      </ul>
-    </div>
-    <div class="quote-card">"La méthode que je vais te montrer est un système simple et concret qui te permet de lancer une chaîne YouTube No Face rentable depuis ton téléphone — <span class="highlight">sans capital, sans expertise, et sans jamais te montrer.</span>"</div>
-  </div>
-</section>
-
-<!-- PROGRAM -->
+<!-- PROGRAMME -->
 <section>
   <div class="container">
     <div class="section-label">Au programme</div>
@@ -701,24 +740,95 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
     <div class="program">
       <div class="day-card">
         <div class="day-num">JOUR 1 — 19 JUIN</div>
-        <h3>Le système complet</h3>
+        <h3>La méthode qui génère des revenus réels</h3>
         <ul>
-          <li>Comment choisir ta niche rentable</li>
-          <li>Créer du contenu sans montrer ton visage</li>
-          <li>Configurer ta chaîne pour la monétisation</li>
-          <li>Les bases de la stratégie YouTube No Face</li>
+          <li>La niche exacte qui a rapporté 300.000 FCFA/mois à l'un de mes élèves</li>
+          <li>Comment créer 10 vidéos en 2h avec mon système de duplication</li>
+          <li>La structure de chaîne qui déclenche la monétisation rapidement</li>
+          <li>Pourquoi 90% des gens échouent — et comment faire partie des 10%</li>
         </ul>
       </div>
       <div class="day-card">
         <div class="day-num">JOUR 2 — 20 JUIN</div>
-        <h3>Accélération &amp; passage à l'action</h3>
+        <h3>De 0 à 1.000.000 FCFA — le cas réel</h3>
         <ul>
-          <li>Comment dupliquer tes revenus</li>
-          <li>Les 3 façons de monétiser une chaîne No Face</li>
-          <li>Études de cas de membres de la communauté</li>
-          <li>Session questions/réponses en direct</li>
+          <li>L'étude de cas complète : de 0 à 1M FCFA en 6 mois depuis l'Afrique</li>
+          <li>Les 3 sources de revenus No Face qui paient le plus en Afrique francophone</li>
+          <li>Comment monétiser AVANT même d'atteindre 1.000 abonnés</li>
+          <li>Session live : je réponds à toutes tes questions en direct</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section>
+  <div class="container">
+    <div class="section-label">Ils ont appliqué la méthode</div>
+    <h2>Ce que disent <span class="accent">mes élèves</span></h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"En 3 mois j'ai atteint la monétisation YouTube. William m'a donné la méthode exacte, pas des théories. Je génère maintenant plus de 150.000 FCFA par mois avec ma chaîne No Face."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">K</div>
+          <div>
+            <div class="testi-name">Kofi A.</div>
+            <div class="testi-loc">🇨🇮 Côte d'Ivoire · +150k FCFA/mois</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"J'avais peur de me lancer car je ne suis pas technicien. Mais tout est expliqué depuis le téléphone. 6 mois plus tard ma chaîne a 50.000 abonnés et je génère des revenus chaque semaine."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div>
+            <div class="testi-name">Aminata S.</div>
+            <div class="testi-loc">🇸🇳 Sénégal · 50k abonnés en 6 mois</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Ce que William enseigne n'existe nulle part ailleurs en Afrique francophone. J'ai suivi le webinaire, j'ai acheté la formation, et en 4 mois j'ai dépassé mon salaire avec YouTube."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Rodrigue N.</div>
+            <div class="testi-loc">🇨🇲 Cameroun · Revenu > salaire en 4 mois</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"1 million de FCFA en 6 mois. Sans me montrer, sans ordinateur, depuis mon téléphone au Bénin. Avant ce webinaire je pensais que c'était impossible depuis l'Afrique. J'avais tort."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">Mariama D.</div>
+            <div class="testi-loc">🇧🇯 Bénin · 1.000.000 FCFA en 6 mois</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF GRID -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-label">Preuves réelles</div>
+    <h2>Les captures de <span class="accent">résultats membres</span></h2>
+    <div class="proof-grid">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69112140ec56b_GnrBMxaXEAAMCt2.png" alt="Résultat membre 1" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691120495fb14_G40v6QgW4AArpxs1.png" alt="Résultat membre 2" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691121293f964_Gopfdw1WMAAUtwU.png" alt="Résultat membre 3" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111cbac7bde_G4lAR-fXoAAX88v.jpeg" alt="Résultat membre 4" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69250176db932_GmcYR3VW4AARrSb.jpeg" alt="Résultat membre 5" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6925018998429_GmVt0EwXAAAaYAQ.jpeg" alt="Résultat membre 6" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111d871cdbc_photo_2025-11-09_23-02-18.jpg" alt="Résultat membre 7" loading="lazy" onclick="openLightbox(this)">
     </div>
   </div>
 </section>
@@ -739,23 +849,6 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
           <div class="stat"><div class="num">99%</div><div class="lbl">de marge — sans coût de départ</div></div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section>
-  <div class="container">
-    <div class="section-label">Ils l'ont fait</div>
-    <h2>Les résultats parlent d'eux-mêmes</h2>
-    <div class="proof-grid">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69112140ec56b_GnrBMxaXEAAMCt2.png" alt="Résultat membre 1" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691120495fb14_G40v6QgW4AArpxs1.png" alt="Résultat membre 2" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691121293f964_Gopfdw1WMAAUtwU.png" alt="Résultat membre 3" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111cbac7bde_G4lAR-fXoAAX88v.jpeg" alt="Résultat membre 4" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69250176db932_GmcYR3VW4AARrSb.jpeg" alt="Résultat membre 5" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6925018998429_GmVt0EwXAAAaYAQ.jpeg" alt="Résultat membre 6" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111d871cdbc_photo_2025-11-09_23-02-18.jpg" alt="Résultat membre 7" loading="lazy" onclick="openLightbox(this)">
     </div>
   </div>
 </section>
