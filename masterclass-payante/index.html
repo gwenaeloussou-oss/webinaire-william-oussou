@@ -666,6 +666,208 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
     .countdown .num { font-size: 1rem; }
     .countdown { gap: 10px; }
   }
+
+  /* ── LIVE PILL ─────────────────────────────────── */
+  .live-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,59,59,0.1);
+    border: 1px solid rgba(255,59,59,0.35);
+    color: #ff5c5c;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 99px;
+    margin-bottom: 22px;
+  }
+  .live-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #ff5c5c;
+    flex-shrink: 0;
+    animation: blink 1.6s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+  /* ── BIG HERO H1 ───────────────────────────────── */
+  .hero h1.big {
+    font-size: clamp(1.7rem, 5.5vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+
+  /* ── BADGE PILLS ────────────────────────────────── */
+  .badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 24px 0 32px;
+  }
+  .badge-pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.11);
+    color: var(--grey);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 7px 14px;
+    border-radius: 99px;
+  }
+
+  /* ── REVELATIONS ────────────────────────────────── */
+  .revelations-section {
+    background: linear-gradient(180deg, #0f1410 0%, var(--bg) 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .revelations {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 700px;
+    margin: 36px auto 0;
+  }
+  .revelation-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 22px;
+    align-items: start;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .revelation-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    border-radius: 3px 0 0 3px;
+  }
+  .revelation-num {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2.6rem;
+    color: var(--accent);
+    line-height: 1;
+    opacity: 0.85;
+  }
+  .revelation-tag {
+    display: inline-block;
+    background: rgba(255,59,59,0.1);
+    color: var(--accent);
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 99px;
+    margin-bottom: 10px;
+  }
+  .revelation-content h3 {
+    font-size: 1.05rem;
+    font-weight: 900;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+    line-height: 1.2;
+  }
+  .revelation-content p {
+    font-size: 0.87rem;
+    color: var(--grey);
+    line-height: 1.65;
+  }
+  .revelation-content .rev-highlight {
+    color: var(--white);
+    font-weight: 700;
+  }
+  @media(max-width:600px){
+    .revelation-item { grid-template-columns: 42px 1fr; gap: 14px; padding: 20px 18px; }
+    .revelation-num { font-size: 2rem; }
+  }
+
+  /* ── TU TE RECONNAIS ICI ────────────────────────── */
+  .recognition-section h2 span.accent { color: var(--accent); }
+  .recognition-intro {
+    text-align: center;
+    color: var(--grey);
+    font-size: 0.95rem;
+    max-width: 520px;
+    margin: -16px auto 32px;
+  }
+  .recognition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .recognition-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid rgba(255,59,59,0.5);
+    border-radius: 12px;
+    padding: 20px 22px;
+    font-size: 0.87rem;
+    color: var(--grey);
+    line-height: 1.6;
+  }
+  .recognition-item strong {
+    display: block;
+    color: var(--white);
+    font-size: 0.93rem;
+    margin-bottom: 5px;
+    font-weight: 800;
+  }
+  .recognition-cta {
+    text-align: center;
+    margin-top: 32px;
+    padding: 22px 24px;
+    background: rgba(255,59,59,0.06);
+    border: 1px solid var(--accent-dim);
+    border-radius: 14px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: 700;
+    line-height: 1.6;
+  }
+  .recognition-cta .accent { color: var(--accent); }
+  @media(max-width:600px){
+    .recognition-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── EXCLUSIVITY BANNER ─────────────────────────── */
+  .exclusivity-banner {
+    background: linear-gradient(135deg, rgba(255,59,59,0.12) 0%, rgba(255,59,59,0.04) 100%);
+    border: 1px solid var(--accent-dim);
+    border-radius: 16px;
+    padding: 32px 36px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 680px;
+  }
+  .exclusivity-banner h3 {
+    font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .exclusivity-banner p {
+    color: var(--grey);
+    font-size: 0.93rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto;
+  }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -684,30 +886,142 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="date-line">19 &amp; 20 Juin 2026 · 19h00 GMT</div>
-    <h1>Lance ta chaîne <span class="accent">YouTube sans visage</span><br>et génère tes premiers revenus<br>depuis l'Afrique</h1>
-    <p class="sub">Sans montrer ton visage. Sans expertise. Avec ton téléphone. Une méthode 100% pensée pour l'Afrique francophone.</p>
-
+    <div class="live-pill"><span class="live-dot"></span>Webinaire Live · 19 &amp; 20 Juin 2026 · 19h GMT</div>
+    <h1 class="big">La <span class="accent">seule méthode</span> YouTube No Face développée pour l'Afrique — testée, prouvée, irréplicable en ligne</h1>
+    <p class="sub">En 2 soirs, je t'expose les techniques exactes que j'ai mises des années à développer. Ce que tu vas apprendre ici, tu ne le trouveras sur aucune chaîne YouTube, aucun blog, aucune formation générique.</p>
+    <div class="badges-row">
+      <span class="badge-pill">Depuis l'Afrique francophone</span>
+      <span class="badge-pill">Sans montrer ton visage</span>
+      <span class="badge-pill">Depuis ton téléphone</span>
+      <span class="badge-pill">Méthode exclusive William Oussou</span>
+    </div>
     <div class="video-wrap">
       <div id="vidalytics_embed_gH0d6PsPy6TpYte0" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
     </div>
+  </div>
+</section>
 
-    <div class="price-tag">
-      <span class="old">10.000 FCFA</span>
-      <span class="new">2.000 FCFA / place</span>
+<!-- 3 RÉVÉLATIONS EXCLUSIVES -->
+<section class="revelations-section">
+  <div class="container">
+    <div class="section-label">Ce que tu ne trouveras pas ailleurs</div>
+    <h2>Pendant ces 2 soirs, je révèle les <span class="accent">3 méthodes propriétaires</span> que j'ai développées seul</h2>
+    <div class="revelations">
+
+      <div class="revelation-item">
+        <div class="revelation-num">01</div>
+        <div class="revelation-content">
+          <span class="revelation-tag">Niche Exclusive</span>
+          <h3>La niche "fantôme" africaine — celle que personne n'enseigne</h3>
+          <p>Il existe une niche de contenu No Face que j'ai identifiée et testée depuis l'Afrique francophone. Elle génère <span class="rev-highlight">2 à 3 fois plus</span> que les niches classiques (finance, lifestyle, motivation) — et elle est encore inexploitée. Je te la révèle en détail, avec la stratégie exacte pour y entrer et dominer rapidement.</p>
+        </div>
+      </div>
+
+      <div class="revelation-item">
+        <div class="revelation-num">02</div>
+        <div class="revelation-content">
+          <span class="revelation-tag">Système Propriétaire</span>
+          <h3>Le système de duplication à 10 vidéos en 2h — développé par William Oussou</h3>
+          <p>J'ai créé un système de production que mes élèves utilisent pour publier 10 vidéos de qualité en moins de 2 heures, depuis leur téléphone. <span class="rev-highlight">Pas de réécriture. Pas d'enregistrement vocal. Pas d'ordinateur.</span> C'est ce système qui explique pourquoi mes élèves passent à l'échelle là où les autres stagnent.</p>
+        </div>
+      </div>
+
+      <div class="revelation-item">
+        <div class="revelation-num">03</div>
+        <div class="revelation-content">
+          <span class="revelation-tag">Monétisation Avant 1.000 Abonnés</span>
+          <h3>La technique de pré-monétisation — avant d'atteindre le seuil officiel YouTube</h3>
+          <p>YouTube impose 1.000 abonnés pour monétiser officiellement. Mais mes élèves génèrent des revenus <span class="rev-highlight">dès les premières semaines</span> grâce à une méthode de pré-monétisation que j'ai développée et qui contourne légalement cette contrainte. Aucun créateur africain n'enseigne ça — parce que personne d'autre ne l'a formalisée.</p>
+        </div>
+      </div>
+
     </div>
 
-    <button class="cta-btn" onclick="openModal()">Je réserve ma place →</button>
-    <p class="cta-note">Webinaire payant — Places strictement limitées</p>
-    <div class="places-bar">⚠️ Il reste moins de 30 places sur 100</div>
+    <div style="margin-top:36px;">
+      <div class="exclusivity-banner">
+        <h3>Ce n'est pas une formation générique.<br><span class="accent">C'est ma méthode personnelle — documentée, testée, exclusive.</span></h3>
+        <p>J'ai mis plusieurs années à construire ce système depuis zéro, sans modèle à copier depuis l'Afrique. Ce que tu vas apprendre existe uniquement dans ce webinaire — nulle part ailleurs sur internet, en aucune langue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TU TE RECONNAIS ICI -->
+<section class="recognition-section">
+  <div class="container">
+    <div class="section-label">Ce webinaire est pour toi si…</div>
+    <h2>Tu te reconnais <span class="accent">dans au moins 3 de ces situations</span></h2>
+    <p class="recognition-intro">Si tu coches ces cases, tu es exactement là où j'en étais avant de créer cette méthode.</p>
+    <div class="recognition-grid">
+      <div class="recognition-item">
+        <strong>Tu veux générer des revenus en ligne — mais pas montrer ton visage</strong>
+        Tu sais que YouTube est une opportunité réelle, mais l'idée d'apparaître à l'écran t'empêche de te lancer.
+      </div>
+      <div class="recognition-item">
+        <strong>Tu as essayé des formations en ligne — mais rien n'était adapté à l'Afrique</strong>
+        Les méthodes que tu trouves sont faites pour les États-Unis ou l'Europe. Les niches ne marchent pas, les outils coûtent trop cher, les conseils ne tiennent pas compte de ta réalité.
+      </div>
+      <div class="recognition-item">
+        <strong>Tu penses que tu as besoin d'un budget important pour démarrer</strong>
+        La vérité : mes élèves ont commencé avec un téléphone d'entrée de gamme et zéro budget de production. Le capital n'est pas le problème.
+      </div>
+      <div class="recognition-item">
+        <strong>Tu travailles pour quelqu'un d'autre depuis trop longtemps</strong>
+        Tu sais que tu as les capacités de créer quelque chose à toi — mais tu ne sais pas exactement par où commencer pour que ça génère un revenu régulier.
+      </div>
+      <div class="recognition-item">
+        <strong>Tu vois des gens gagner de l'argent sur YouTube — sans comprendre leur système</strong>
+        Ils ne te montrent pas vraiment comment ils font. Ils vendent du rêve. Toi tu veux une méthode documentée, pas de l'inspiration.
+      </div>
+      <div class="recognition-item">
+        <strong>Tu as peur que ce soit trop tard, que le marché soit saturé</strong>
+        Il n'est pas trop tard. La niche que j'ai identifiée pour l'Afrique francophone est encore inexploitée. C'est maintenant qu'il faut entrer — pas dans 2 ans.
+      </div>
+    </div>
+    <div class="recognition-cta">
+      Si tu as coché au moins 3 de ces cases — <span class="accent">ce webinaire a été conçu spécifiquement pour toi.</span><br>
+      Réserve ta place avant que les 100 places soient complètes.
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section>
+  <div class="container">
+    <div class="section-label">Au programme — 2 soirs de formation live</div>
+    <h2>Ce que tu vas découvrir <span class="accent">soir après soir</span></h2>
+    <div class="program">
+      <div class="day-card">
+        <div class="day-num">JOUR 1 — 19 JUIN · 19H GMT</div>
+        <h3>La fondation : niche, système, structure</h3>
+        <ul>
+          <li>La niche fantôme africaine révélée — avec des données réelles</li>
+          <li>Mon système de duplication : 10 vidéos en 2h depuis ton téléphone</li>
+          <li>La structure de chaîne exacte qui déclenche l'algorithme rapidement</li>
+          <li>Pourquoi 90% des créateurs africains échouent — et ce que les 10% font différemment</li>
+          <li>Les outils gratuits que j'utilise personnellement (zéro abonnement payant)</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-num">JOUR 2 — 20 JUIN · 19H GMT</div>
+        <h3>La monétisation : revenus réels, étude de cas</h3>
+        <ul>
+          <li>L'étude de cas complète : de 0 à 1.000.000 FCFA en 6 mois depuis le Bénin</li>
+          <li>La technique de pré-monétisation — avant 1.000 abonnés</li>
+          <li>Les 3 sources de revenus No Face qui paient le plus en Afrique francophone</li>
+          <li>Comment scaler : de 150k FCFA/mois à 300k FCFA/mois avec le même système</li>
+          <li>Session Q&amp;R live — je réponds à toutes tes questions en direct</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- RÉSULTATS CHOCS -->
 <section>
   <div class="container">
-    <div class="section-label">Ce que la méthode a produit</div>
-    <h2>Pendant que tu lisais ça,<br><span class="accent">mes élèves généraient des revenus</span></h2>
+    <div class="section-label">Chiffres réels — membres de la méthode</div>
+    <h2>Pendant que tu lis cette page, <span class="accent">mes élèves génèrent des revenus</span></h2>
     <div class="results-strip">
       <div class="result-card">
         <div class="result-num">300.000<span>FCFA</span></div>
@@ -723,41 +1037,28 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
       </div>
       <div class="result-card">
         <div class="result-num">100%</div>
-        <div class="result-lbl">depuis un téléphone, sans capital</div>
+        <div class="result-lbl">réalisé depuis un téléphone, sans capital</div>
       </div>
     </div>
     <div class="results-callout">
-      Ces résultats ne viennent pas de la chance. Ils viennent d'une méthode précise, appliquée étape par étape. <strong>Dans ce webinaire, je te montre exactement ce qu'ils ont fait.</strong>
+      Ces résultats ne viennent pas du hasard. Ils viennent d'une méthode précise, documentée, appliquée étape par étape. <strong>Dans ce webinaire, je te montre exactement ce qu'ils ont fait — et dans quel ordre.</strong>
     </div>
   </div>
 </section>
 
-<!-- PROGRAMME -->
-<section>
+<!-- PROOF GRID -->
+<section style="padding-top:0;">
   <div class="container">
-    <div class="section-label">Au programme</div>
-    <h2>Ce soir-là, tu vas découvrir…</h2>
-    <div class="program">
-      <div class="day-card">
-        <div class="day-num">JOUR 1 — 19 JUIN</div>
-        <h3>La méthode qui génère des revenus réels</h3>
-        <ul>
-          <li>La niche exacte qui a rapporté 300.000 FCFA/mois à l'un de mes élèves</li>
-          <li>Comment créer 10 vidéos en 2h avec mon système de duplication</li>
-          <li>La structure de chaîne qui déclenche la monétisation rapidement</li>
-          <li>Pourquoi 90% des gens échouent — et comment faire partie des 10%</li>
-        </ul>
-      </div>
-      <div class="day-card">
-        <div class="day-num">JOUR 2 — 20 JUIN</div>
-        <h3>De 0 à 1.000.000 FCFA — le cas réel</h3>
-        <ul>
-          <li>L'étude de cas complète : de 0 à 1M FCFA en 6 mois depuis l'Afrique</li>
-          <li>Les 3 sources de revenus No Face qui paient le plus en Afrique francophone</li>
-          <li>Comment monétiser AVANT même d'atteindre 1.000 abonnés</li>
-          <li>Session live : je réponds à toutes tes questions en direct</li>
-        </ul>
-      </div>
+    <div class="section-label">Preuves réelles — captures d'écran membres</div>
+    <h2>Les résultats de <span class="accent">personnes comme toi</span></h2>
+    <div class="proof-grid">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69112140ec56b_GnrBMxaXEAAMCt2.png" alt="Résultat membre 1" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691120495fb14_G40v6QgW4AArpxs1.png" alt="Résultat membre 2" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691121293f964_Gopfdw1WMAAUtwU.png" alt="Résultat membre 3" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111cbac7bde_G4lAR-fXoAAX88v.jpeg" alt="Résultat membre 4" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69250176db932_GmcYR3VW4AARrSb.jpeg" alt="Résultat membre 5" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6925018998429_GmVt0EwXAAAaYAQ.jpeg" alt="Résultat membre 6" loading="lazy" onclick="openLightbox(this)">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111d871cdbc_photo_2025-11-09_23-02-18.jpg" alt="Résultat membre 7" loading="lazy" onclick="openLightbox(this)">
     </div>
   </div>
 </section>
@@ -797,7 +1098,7 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
           <div class="testi-avatar">R</div>
           <div>
             <div class="testi-name">Rodrigue N.</div>
-            <div class="testi-loc">🇨🇲 Cameroun · Revenu > salaire en 4 mois</div>
+            <div class="testi-loc">🇨🇲 Cameroun · Revenu &gt; salaire en 4 mois</div>
           </div>
         </div>
       </div>
@@ -816,37 +1117,21 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- PROOF GRID -->
-<section style="padding-top:0;">
-  <div class="container">
-    <div class="section-label">Preuves réelles</div>
-    <h2>Les captures de <span class="accent">résultats membres</span></h2>
-    <div class="proof-grid">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69112140ec56b_GnrBMxaXEAAMCt2.png" alt="Résultat membre 1" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691120495fb14_G40v6QgW4AArpxs1.png" alt="Résultat membre 2" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691121293f964_Gopfdw1WMAAUtwU.png" alt="Résultat membre 3" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111cbac7bde_G4lAR-fXoAAX88v.jpeg" alt="Résultat membre 4" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69250176db932_GmcYR3VW4AARrSb.jpeg" alt="Résultat membre 5" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6925018998429_GmVt0EwXAAAaYAQ.jpeg" alt="Résultat membre 6" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111d871cdbc_photo_2025-11-09_23-02-18.jpg" alt="Résultat membre 7" loading="lazy" onclick="openLightbox(this)">
-    </div>
-  </div>
-</section>
-
 <!-- INSTRUCTOR -->
 <section>
   <div class="container">
     <div class="instructor">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69ebc2ef8dcfd1.22622888_11.png" alt="William Oussou" loading="lazy">
       <div class="instructor-content">
-        <div class="section-label">Ton formateur dans cette aventure</div>
+        <div class="section-label">Qui est William Oussou ?</div>
         <h2>William Oussou</h2>
-        <div class="role">YouTube No Face Strategist &amp; Formateur</div>
-        <p>Entrepreneur, investisseur et formateur, spécialisé dans le YouTube No Face, le freelancing et le trading. Sa mission : prouver qu'en Afrique aussi, on peut créer et vivre du digital — sans arnaque, sans illusion, avec de vraies stratégies testées.</p>
+        <div class="role">Créateur de la Méthode YouTube No Face Afrique · Formateur &amp; Entrepreneur</div>
+        <p>Pendant des années, j'ai cherché comment créer des revenus réels depuis l'Afrique — sans arnaque, sans illusion. J'ai construit la méthode YouTube No Face en testant tout moi-même : les niches, les systèmes de production, les techniques de monétisation. Aujourd'hui, plus de 100 personnes appliquent cette méthode et génèrent des résultats que personne n'aurait cru possibles depuis notre continent.</p>
+        <p>Ce que j'enseigne n'est pas copié d'une formation américaine. C'est construit depuis l'Afrique, pour l'Afrique.</p>
         <div class="stats">
-          <div class="stat"><div class="num">+100</div><div class="lbl">Personnes accompagnées</div></div>
+          <div class="stat"><div class="num">+100</div><div class="lbl">Membres accompagnés</div></div>
           <div class="stat"><div class="num">10M+</div><div class="lbl">FCFA générés en 2025</div></div>
-          <div class="stat"><div class="num">99%</div><div class="lbl">de marge — sans coût de départ</div></div>
+          <div class="stat"><div class="num">0€</div><div class="lbl">De budget pour commencer</div></div>
         </div>
       </div>
     </div>
@@ -856,21 +1141,23 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
 <!-- OFFER -->
 <section>
   <div class="container">
-    <div class="section-label">Offre exclusive</div>
-    <h2>Réserve ta place maintenant</h2>
+    <div class="section-label">Offre de lancement — places limitées</div>
+    <h2>Réserve ta place maintenant — <span class="accent">avant la fermeture</span></h2>
     <div class="offer-box">
-      <div class="badge">−80% AUJOURD'HUI</div>
-      <p style="color:var(--grey);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:800;">Accès complet · 2 jours de formation live</p>
+      <div class="badge">−80% OFFRE DE LANCEMENT</div>
+      <p style="color:var(--grey);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:800;">Accès complet · Jour 1 &amp; Jour 2 · Méthode exclusive</p>
       <div class="old-price">10.000 FCFA</div>
       <div class="new-price">2.000 <span>FCFA</span></div>
       <ul class="includes">
-        <li>Accès en direct au webinaire — Jour 1 &amp; 2 (19 et 20 juin)</li>
-        <li>Méthode complète YouTube No Face</li>
-        <li>Études de cas réelles de membres africains</li>
-        <li>Session Q&amp;R en direct avec William</li>
-        <li>Accès au groupe privé de la communauté</li>
+        <li>Accès en direct au webinaire — Soir 1 &amp; Soir 2 (19 et 20 juin)</li>
+        <li>Les 3 méthodes exclusives William Oussou révélées en live</li>
+        <li>La niche fantôme africaine — dévoilée avec données réelles</li>
+        <li>Le système de duplication à 10 vidéos en 2h — expliqué étape par étape</li>
+        <li>Session Q&amp;R en direct — toutes tes questions, réponses réelles</li>
+        <li>Accès au groupe privé de la communauté No Face Afrique</li>
       </ul>
-      <button class="cta-btn" onclick="openModal()">Je réserve ma place →</button>
+      <button class="cta-btn" onclick="openModal()">Je réserve ma place — 2.000 FCFA →</button>
+      <p class="cta-note">Paiement 100% sécurisé · Accès instantané par email</p>
     </div>
     <div class="scarcity-widget">
       <div class="scarcity-top">
@@ -886,11 +1173,11 @@ src="https://www.facebook.com/tr?id=1207528901185970&ev=PageView&noscript=1"
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="container">
-    <h2>Réserve ta place — <span class="accent">2.000 FCFA seulement</span></h2>
-    <p class="sub">Premier choix : tu fermes cette page, tu continues ta routine, et le 19 juin tu n'es pas dans le live. Deuxième choix : tu sécurises ta place pour 2.000 FCFA et tu repars avec une méthode complète pour démarrer depuis l'Afrique.</p>
-    <button class="cta-btn" onclick="openModal()">Je réserve ma place →</button>
+    <h2>Tu as deux options devant toi — <span class="accent">choisis maintenant</span></h2>
+    <p class="sub">Option 1 : tu fermes cette page, tu continues comme avant, et dans 6 mois tu seras exactement au même endroit qu'aujourd'hui. Option 2 : tu investis 2.000 FCFA ce soir, tu rejoins le live les 19 et 20 juin, et tu repars avec la méthode complète pour changer ta trajectoire depuis l'Afrique.</p>
+    <button class="cta-btn" onclick="openModal()">Je prends ma place — 2.000 FCFA →</button>
     <div class="footer-note">
-      <span>✓</span> 2 jours de live &nbsp;<span>✓</span> Accès groupe privé
+      <span>✓</span> 2 soirs de live exclusif &nbsp;<span>✓</span> Méthode propriétaire &nbsp;<span>✓</span> Groupe privé inclus
     </div>
   </div>
 </section>
