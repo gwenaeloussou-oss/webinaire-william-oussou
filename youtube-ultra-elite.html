@@ -963,9 +963,6 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173dcab44b7.30581794_photo_2026-06-1616.02.12.jpeg" alt="Preuve de paiement YouTube" loading="lazy" onclick="openLightbox(this)">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173f3ba5c66.75511443_photo_2026-06-1616.02.14.jpeg" alt="Preuve de paiement YouTube" loading="lazy" onclick="openLightbox(this)">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a317404a23ef6.69813823_photo_2026-06-1616.02.16.jpeg" alt="Preuve de paiement YouTube" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a317415745ca4.52511443_photo_2026-06-1616.02.08.jpeg" alt="Preuve de paiement YouTube" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a31743ed4ae10.85511588_photo_2026-06-1616.02.06.jpeg" alt="Preuve de paiement YouTube" loading="lazy" onclick="openLightbox(this)">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3174564f0926.45511831_photo_2026-06-1616.02.10.jpeg" alt="Preuve de paiement YouTube" loading="lazy" onclick="openLightbox(this)">
     </div>
   </div>
 </section>
@@ -1210,7 +1207,12 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
   function updateTimer() {
-    var remaining = Math.max(0, endTime - Date.now());
+    var remaining = endTime - Date.now();
+    if (remaining <= 0) {
+      endTime = Date.now() + DURATION;
+      localStorage.setItem(TIMER_KEY, endTime);
+      remaining = DURATION;
+    }
     var h = Math.floor(remaining / 3600000);
     var m = Math.floor((remaining % 3600000) / 60000);
     var s = Math.floor((remaining % 60000) / 1000);
