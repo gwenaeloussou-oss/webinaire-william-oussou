@@ -347,6 +347,20 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
   }
   .module-card li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
 
+  /* ── PROOF STACK (1 par ligne) ── */
+  .proof-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+  .proof-stack img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    object-fit: contain;
+  }
+
   /* ── PROOF GRID ── */
   .proof-grid {
     display: grid;
@@ -1041,11 +1055,13 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
     <div class="section-label">Preuves de résultats</div>
     <h2>Des Résultats de Membres<br><span class="accent">Qui Sont Passés à l'Action</span></h2>
 
-    <div class="proof-grid">
+    <div class="proof-stack">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173a31fe904.50127693_photo_2026-06-1616.02.18.jpeg" alt="Preuve de paiement YouTube" loading="lazy">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173dcab44b7.30581794_photo_2026-06-1616.02.12.jpeg" alt="Preuve de paiement YouTube" loading="lazy">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a3173f3ba5c66.75511443_photo_2026-06-1616.02.14.jpeg" alt="Preuve de paiement YouTube" loading="lazy">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6a317404a23ef6.69813823_photo_2026-06-1616.02.16.jpeg" alt="Preuve de paiement YouTube" loading="lazy">
+    </div>
+    <div class="proof-grid" style="margin-top:10px;">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/69111ef775738_GmcYR3VW4AARrSb.jpeg" alt="Résultat membre" loading="lazy">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/6925018998429_GmVt0EwXAAAaYAQ.jpeg" alt="Résultat membre" loading="lazy">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/7339626/691122618ee0d_Gmfii69WwAAND6Z.jpeg" alt="Résultat membre" loading="lazy">
