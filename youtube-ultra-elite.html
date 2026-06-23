@@ -1282,27 +1282,16 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
 
 <!-- SCRIPTS -->
 <script>
-  // Countdown timer with localStorage persistence
-  var TIMER_KEY = 'yt_ultra_end';
-  var DURATION = 24 * 60 * 60 * 1000; // 24 hours
-  var endTime;
-  var stored = localStorage.getItem(TIMER_KEY);
-  if (stored && parseInt(stored) > Date.now()) {
-    endTime = parseInt(stored);
-  } else {
-    endTime = Date.now() + DURATION;
-    localStorage.setItem(TIMER_KEY, endTime);
+  // Countdown to next midnight UTC (resets every day at 00:00 GMT+0)
+  function getNextMidnightUTC() {
+    var now = new Date();
+    return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 0, 0, 0);
   }
 
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
   function updateTimer() {
-    var remaining = endTime - Date.now();
-    if (remaining <= 0) {
-      endTime = Date.now() + DURATION;
-      localStorage.setItem(TIMER_KEY, endTime);
-      remaining = DURATION;
-    }
+    var remaining = getNextMidnightUTC() - Date.now();
     var h = Math.floor(remaining / 3600000);
     var m = Math.floor((remaining % 3600000) / 60000);
     var s = Math.floor((remaining % 60000) / 1000);
