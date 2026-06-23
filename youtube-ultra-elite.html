@@ -633,14 +633,27 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
     border: none; border-top: 1px solid #e5e5e5;
     margin: 24px 0;
   }
+  @keyframes shine {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes pulse-red {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(204,0,0,0.5); }
+    50%       { box-shadow: 0 0 0 10px rgba(204,0,0,0); }
+  }
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(232,160,32,0.5); }
+    50%       { box-shadow: 0 0 0 10px rgba(232,160,32,0); }
+  }
   .pay-btn-red {
     display: block;
     width: 100%;
-    background: #CC0000;
+    background: linear-gradient(110deg, #CC0000 40%, #ff4444 50%, #CC0000 60%);
+    background-size: 200% auto;
     color: #fff;
     font-family: 'Archivo Black', sans-serif;
     text-transform: uppercase;
-    font-size: 0.88rem;
+    font-size: 0.76rem;
     padding: 16px 20px;
     border-radius: 8px;
     border: none;
@@ -648,17 +661,19 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
     text-align: center;
     letter-spacing: 0.04em;
     text-decoration: none;
-    transition: background 0.15s;
+    animation: shine 2.4s linear infinite, pulse-red 2s ease-in-out infinite;
+    transition: opacity 0.15s;
   }
-  .pay-btn-red:hover { background: #aa0000; }
+  .pay-btn-red:hover { opacity: 0.9; }
   .pay-btn-gold {
     display: block;
     width: 100%;
-    background: #E8A020;
+    background: linear-gradient(110deg, #E8A020 40%, #ffc84a 50%, #E8A020 60%);
+    background-size: 200% auto;
     color: #fff;
     font-family: 'Archivo Black', sans-serif;
     text-transform: uppercase;
-    font-size: 0.88rem;
+    font-size: 0.76rem;
     padding: 16px 20px;
     border-radius: 8px;
     border: none;
@@ -666,9 +681,10 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
     text-align: center;
     letter-spacing: 0.04em;
     text-decoration: none;
-    transition: background 0.15s;
+    animation: shine 2.4s linear infinite, pulse-gold 2s ease-in-out infinite;
+    transition: opacity 0.15s;
   }
-  .pay-btn-gold:hover { background: #c98a18; }
+  .pay-btn-gold:hover { opacity: 0.9; }
 
   /* ── STICKY MOBILE CTA ── */
   .sticky-cta {
@@ -1013,7 +1029,7 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
     </div>
 
     <div style="text-align:center;">
-      <a class="cta-btn" href="#" onclick="openPayModal(); return false;">ACCÉDER AU PROGRAMME — 50.000 FCFA →</a>
+      <a class="cta-btn" href="#" onclick="openPayModal(); return false;">ACCÉDER AU PROGRAMME →</a>
       <p class="cta-sub" style="margin-top:10px;">Prix normal : <span style="text-decoration:line-through;color:var(--grey);">650.000 FCFA</span> · <span>Tu économises 600.000 FCFA</span></p>
     </div>
   </div>
@@ -1245,7 +1261,7 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta">
-  <a class="cta-btn" href="#" onclick="openPayModal(); return false;">REJOINDRE LE PROGRAMME — 50.000 FCFA →</a>
+  <a class="cta-btn" href="#" onclick="openPayModal(); return false;">REJOINDRE LE PROGRAMME →</a>
 </div>
 
 <footer>
