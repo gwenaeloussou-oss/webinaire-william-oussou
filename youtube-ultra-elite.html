@@ -590,6 +590,86 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
     width: 42px; height: 42px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; line-height: 1;
   }
 
+  /* ── PAYMENT POPUP ── */
+  .pay-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.78);
+    z-index: 3000;
+    align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .pay-overlay.active { display: flex; }
+  .pay-modal {
+    background: #fff;
+    border-radius: 16px;
+    padding: 36px 32px;
+    max-width: 520px;
+    width: 100%;
+    position: relative;
+    color: #111;
+  }
+  .pay-modal-close {
+    position: absolute; top: 14px; right: 14px;
+    background: none; border: none;
+    font-size: 1.3rem; cursor: pointer; color: #555;
+    width: 32px; height: 32px; line-height: 1;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pay-modal-close:hover { background: #f0f0f0; }
+  .pay-option { margin-bottom: 28px; }
+  .pay-option:last-child { margin-bottom: 0; }
+  .pay-option p {
+    font-size: 0.97rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    text-align: center;
+    color: #222;
+  }
+  .pay-option p strong { color: #111; }
+  .pay-option p .pay-price { color: #CC0000; font-weight: 800; }
+  .pay-divider {
+    border: none; border-top: 1px solid #e5e5e5;
+    margin: 24px 0;
+  }
+  .pay-btn-red {
+    display: block;
+    width: 100%;
+    background: #CC0000;
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.88rem;
+    padding: 16px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .pay-btn-red:hover { background: #aa0000; }
+  .pay-btn-gold {
+    display: block;
+    width: 100%;
+    background: #E8A020;
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.88rem;
+    padding: 16px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .pay-btn-gold:hover { background: #c98a18; }
+
   /* ── STICKY MOBILE CTA ── */
   .sticky-cta {
     display: none;
@@ -691,7 +771,7 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
       <div class="save">Tu économises 600.000 FCFA — Réduction de 92%</div>
     </div>
 
-    <a class="cta-btn" href="https://william-oussou.mychariow.shop/you-ultra/checkout" target="_blank" rel="noopener">OUI ! JE VEUX REJOINDRE LE PROGRAMME MAINTENANT →</a>
+    <a class="cta-btn" href="#" onclick="openPayModal(); return false;">OUI ! JE VEUX REJOINDRE LE PROGRAMME MAINTENANT →</a>
     <p class="cta-sub">Accès immédiat après paiement · <span>Mobile Money accepté</span> · Depuis toute l'Afrique</p>
   </div>
 </section>
@@ -933,7 +1013,7 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
     </div>
 
     <div style="text-align:center;">
-      <a class="cta-btn" href="https://william-oussou.mychariow.shop/you-ultra/checkout" target="_blank" rel="noopener">ACCÉDER AU PROGRAMME — 50.000 FCFA →</a>
+      <a class="cta-btn" href="#" onclick="openPayModal(); return false;">ACCÉDER AU PROGRAMME — 50.000 FCFA →</a>
       <p class="cta-sub" style="margin-top:10px;">Prix normal : <span style="text-decoration:line-through;color:var(--grey);">650.000 FCFA</span> · <span>Tu économises 600.000 FCFA</span></p>
     </div>
   </div>
@@ -1123,7 +1203,7 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
         <li>Accès à vie + mises à jour gratuites</li>
       </ul>
 
-      <a class="cta-btn" href="https://william-oussou.mychariow.shop/you-ultra/checkout" target="_blank" rel="noopener">OUI ! JE VEUX REJOINDRE LE PROGRAMME MAINTENANT →</a>
+      <a class="cta-btn" href="#" onclick="openPayModal(); return false;">OUI ! JE VEUX REJOINDRE LE PROGRAMME MAINTENANT →</a>
       <p class="cta-sub" style="margin-top:14px;">Paiement sécurisé · Orange Money · Wave · MTN · Moov · Carte bancaire</p>
 
       <div class="scarcity-widget">
@@ -1138,6 +1218,25 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- PAYMENT POPUP -->
+<div class="pay-overlay" id="pay-overlay">
+  <div class="pay-modal">
+    <button class="pay-modal-close" onclick="closePayModal()">✕</button>
+
+    <div class="pay-option">
+      <p>Si vous souhaitez rejoindre le programme <strong>YOUTUBE ULTRA ELITE EN 1 TRANCHE</strong> <span class="pay-price">(Paiement unique : 50.000 FCFA)</span> et profiter de tous les bonus exclusifs, cliquez sur le bouton ci-dessous :</p>
+      <a class="pay-btn-red" href="https://william-oussou.mychariow.shop/you-ultra/checkout" target="_blank" rel="noopener">REJOINDRE LE PROGRAMME EN 1X</a>
+    </div>
+
+    <hr class="pay-divider">
+
+    <div class="pay-option">
+      <p>Si vous souhaitez rejoindre le programme <strong>YOUTUBE ULTRA ELITE EN 2 TRANCHES</strong> <span class="pay-price">(30.000 FCFA × 2)</span>, cliquez sur le bouton ci-dessous :</p>
+      <a class="pay-btn-gold" href="#" target="_blank" rel="noopener" id="pay-2x-btn">REJOINDRE LE PROGRAMME EN 2X</a>
+    </div>
+  </div>
+</div>
+
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">✕</button>
@@ -1146,7 +1245,7 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta">
-  <a class="cta-btn" href="https://william-oussou.mychariow.shop/you-ultra/checkout" target="_blank" rel="noopener">REJOINDRE LE PROGRAMME — 50.000 FCFA →</a>
+  <a class="cta-btn" href="#" onclick="openPayModal(); return false;">REJOINDRE LE PROGRAMME — 50.000 FCFA →</a>
 </div>
 
 <footer>
@@ -1208,6 +1307,19 @@ src="https://www.facebook.com/tr?id=713540495138888&ev=PageView&noscript=1"
 
   updateTimer();
   setInterval(updateTimer, 1000);
+
+  // Payment popup
+  function openPayModal() {
+    document.getElementById('pay-overlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePayModal() {
+    document.getElementById('pay-overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('pay-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closePayModal();
+  });
 
   // Lightbox
   function openLightbox(img) {
