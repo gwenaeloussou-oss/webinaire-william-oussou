@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/masterclass-payante", "destination": "/index.html" },
+    { "source": "/masterclass-payante", "destination": "/masterclass-payante.html" },
     { "source": "/bonus-offert", "destination": "/bonus.html" },
     { "source": "/trading-expert", "destination": "/trading-expert.html" },
     { "source": "/youtube-ultra-elite", "destination": "/youtube-ultra-elite.html" }
